@@ -20,7 +20,7 @@ snr_db = 10
 x_t_watts = np.mean(x_t**2)
 x_t_db = 10 * np.log10(x_t_watts)
 
-# Calculate noise according to [2] then convert to watts
+# Calculate noise according to SNR_{db}=P_{signal,dB} - P_{noise,dB} then convert to watts
 noise_db = x_t_db - snr_db
 noise_watts = 10 ** (noise_db / 10)
 
